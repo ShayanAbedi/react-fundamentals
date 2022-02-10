@@ -20,6 +20,7 @@ function App() {
 
   function removeItem(item) {
     setItems(items.filter(i => i.id !== item.id))
+    console.log(items)
   }
 
   return (
@@ -29,7 +30,6 @@ function App() {
       </button>
       <ul style={{listStyle: 'none', paddingLeft: 0}}>
         {items.map(item => (
-          // 🐨 add a key prop to the <li> below. Set it to item.id
           <li>
             <button onClick={() => removeItem(item)}>remove</button>{' '}
             <label htmlFor={`${item.id}-input`}>{item.value}</label>{' '}
